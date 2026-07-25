@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Booking History | Cargo Connect</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet"
+        href="css/history.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+
+      <i class="fa-solid fa-truck-fast"></i>
+
+      <span>Cargo Connect</span>
+
+    </div>
+
+    <ul>
+
+      <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+
+      <li><a href="booking.html"><i class="fa-solid fa-truck"></i> Book Vehicle</a></li>
+
+      <li><a href="tracking.html"><i class="fa-solid fa-location-dot"></i> Tracking</a></li>
+
+      <li class="active"><a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Booking History</a></li>
+
+      <li><a href="payment.html"><i class="fa-solid fa-credit-card"></i> Payment</a></li>
+
+      <li><a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+
+      <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+    </ul>
+
+  </aside>
+
+  <!-- Main -->
+
+  <main class="main">
+
+    <div class="page-header">
+
+      <h1>Booking History</h1>
+
+      <div class="search-box">
+
+        <input
+                type="text"
+                id="searchBooking"
+                placeholder="Search Booking ID">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+      </div>
+
+    </div>
+
+    <!-- History Table -->
+
+    <section class="history-card">
+
+      <h2>Previous Bookings</h2>
+
+      <table id="historyTable">
+
+        <thead>
+
+        <tr>
+
+          <th>Booking ID</th>
+
+          <th>Pickup</th>
+
+          <th>Destination</th>
+
+          <th>Vehicle</th>
+
+          <th>Date</th>
+
+          <th>Amount</th>
+
+          <th>Status</th>
+
+          <th>Action</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="historyBody">
+
+        <!-- Loaded by JavaScript -->
+
+        </tbody>
+
+      </table>
+
+    </section>
+    <!-- ================= Booking Details Modal ================= -->
+
+    <div id="bookingModal" class="modal">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <h2>Booking Details</h2>
+
+          <button id="closeModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+          </button>
+
+        </div>
+
+        <div class="details">
+
+          <div class="detail-row">
+
+            <span>Booking ID</span>
+
+            <strong id="modalBookingId"></strong>
+
+          </div>
+
+          <div class="detail-row">
+
+            <span>Pickup</span>
+
+            <strong id="modalPickup"></strong>
+
+          </div>
+
+          <div class="detail-row">
+
+            <span>Destination</span>
+
+            <strong id="modalDrop"></strong>
+
+          </div>
+
+          <div class="detail-row">
+
+            <span>Vehicle</span>
+
+            <strong id="modalVehicle"></strong>
+
+          </div>
+
+          <div class="detail-row">
+
+            <span>Weight</span>
+
+            <strong id="modalWeight"></strong>
+
+          </div>
+
+          <div class="detail-row">
+
+            <span>Goods</span>
+
+            <strong id="modalGoods"></strong>
+
+          </div>
+
+          <div class="detail-row">
+
+            <span>Total Amount</span>
+
+            <strong id="modalAmount"></strong>
+
+          </div>
+
+          <div class="detail-row">
+
+            <span>Status</span>
+
+            <strong id="modalStatus"></strong>
+
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+          <button id="trackBooking">
+
+            Track Booking
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= Footer ================= -->
+
+    <footer>
+
+      <p>
+
+        © 2026 Cargo Connect | Booking History
+
+      </p>
+
+    </footer>
+
+  </main>
+
+</div>
+
+<script src="js/history.js"></script>
+
+</body>
+
+</html>

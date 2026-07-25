@@ -1,0 +1,459 @@
+/*=========================================
+driver-dashboard.css (Part 1)
+=========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/*==================================
+Sidebar
+==================================*/
+
+.sidebar{
+    width:260px;
+    background:#0f172a;
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    padding:30px 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:45px;
+}
+
+.logo i{
+    font-size:32px;
+    color:#3b82f6;
+}
+
+.logo span{
+    font-size:24px;
+    font-weight:700;
+}
+
+.sidebar ul li{
+    margin-bottom:12px;
+}
+
+.sidebar ul li a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    color:#cbd5e1;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.sidebar ul li.active a{
+    background:#2563eb;
+    color:#fff;
+}
+
+.sidebar ul li a:hover{
+    background:#2563eb;
+    color:#fff;
+}
+
+/*==================================
+Main
+==================================*/
+
+.main{
+    flex:1;
+    margin-left:260px;
+    padding:35px;
+}
+
+/*==================================
+Header
+==================================*/
+
+.header{
+    margin-bottom:35px;
+}
+
+.header h1{
+    font-size:34px;
+    color:#0f172a;
+    margin-bottom:8px;
+}
+
+.header p{
+    color:#64748b;
+}
+
+/*==================================
+Statistics
+==================================*/
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card i{
+    font-size:34px;
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.card h2{
+    font-size:30px;
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#64748b;
+}
+
+/*==================================
+Booking Table
+==================================*/
+
+.booking-list{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:35px;
+    overflow-x:auto;
+}
+
+.booking-list h2{
+    margin-bottom:25px;
+    color:#0f172a;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:900px;
+}
+
+thead{
+    background:#2563eb;
+    color:#fff;
+}
+
+thead th{
+    padding:16px;
+    text-align:left;
+}
+
+tbody tr{
+    border-bottom:1px solid #e5e7eb;
+}
+
+tbody tr:hover{
+    background:#eff6ff;
+}
+
+tbody td{
+    padding:16px;
+}
+
+.status{
+    color:#fff;
+    padding:7px 15px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.status.pending{
+    background:#f59e0b;
+}
+
+.status.transit{
+    background:#2563eb;
+}
+
+.status.completed{
+    background:#22c55e;
+}
+
+.action-btn{
+    border:none;
+    background:#2563eb;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.action-btn:hover{
+    background:#1d4ed8;
+}
+/*=========================================
+driver-dashboard.css (Part 2)
+=========================================*/
+
+/*==================================
+Driver Status Card
+==================================*/
+
+.driver-status{
+
+    margin-bottom:35px;
+
+}
+
+.status-card{
+
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.status-card h2{
+
+    margin-bottom:25px;
+    color:#0f172a;
+
+}
+
+.status-row{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.status-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.status-row span:first-child{
+
+    color:#64748b;
+    font-weight:500;
+
+}
+
+.status-row span:last-child{
+
+    font-weight:600;
+    color:#0f172a;
+
+}
+
+/*==================================
+Online / Offline Status
+==================================*/
+
+.online{
+
+    color:#22c55e !important;
+
+}
+
+.offline{
+
+    color:#ef4444 !important;
+
+}
+
+/*==================================
+Toggle Switch
+==================================*/
+
+.switch{
+
+    position:relative;
+    display:inline-block;
+    width:60px;
+    height:32px;
+
+}
+
+.switch input{
+
+    opacity:0;
+    width:0;
+    height:0;
+
+}
+
+.slider{
+
+    position:absolute;
+    cursor:pointer;
+    inset:0;
+    background:#cbd5e1;
+    transition:.4s;
+    border-radius:50px;
+
+}
+
+.slider::before{
+
+    content:"";
+    position:absolute;
+    width:24px;
+    height:24px;
+    left:4px;
+    bottom:4px;
+    background:#fff;
+    transition:.4s;
+    border-radius:50%;
+
+}
+
+input:checked + .slider{
+
+    background:#22c55e;
+
+}
+
+input:checked + .slider::before{
+
+    transform:translateX(28px);
+
+}
+
+/*==================================
+Footer
+==================================*/
+
+footer{
+
+    background:#fff;
+    padding:25px;
+    text-align:center;
+    color:#64748b;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+/*==================================
+Responsive
+==================================*/
+
+@media(max-width:1200px){
+
+    .stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .sidebar{
+
+        width:80px;
+
+    }
+
+    .logo span,
+    .sidebar ul li a{
+
+        font-size:0;
+
+    }
+
+    .sidebar ul li i{
+
+        font-size:20px;
+
+    }
+
+    .main{
+
+        margin-left:80px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .status-row{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .main{
+
+        padding:15px;
+
+    }
+
+    .booking-list,
+    .status-card{
+
+        padding:20px;
+
+    }
+
+}

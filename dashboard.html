@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard | Cargo Connect</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+
+      <i class="fa-solid fa-truck-fast"></i>
+
+      <span>Cargo Connect</span>
+
+    </div>
+
+    <ul class="menu">
+
+      <li class="active">
+
+        <a href="#">
+
+          <i class="fa-solid fa-house"></i>
+
+          Dashboard
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="booking.html">
+
+          <i class="fa-solid fa-truck"></i>
+
+          Book Vehicle
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="tracking.html">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          Live Tracking
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="history.html">
+
+          <i class="fa-solid fa-clock-rotate-left"></i>
+
+          Booking History
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="payment.html">
+
+          <i class="fa-solid fa-credit-card"></i>
+
+          Payments
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="profile.html">
+
+          <i class="fa-solid fa-user"></i>
+
+          Profile
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="#">
+
+          <i class="fa-solid fa-gear"></i>
+
+          Settings
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="login.html">
+
+          <i class="fa-solid fa-right-from-bracket"></i>
+
+          Logout
+
+        </a>
+
+      </li>
+
+    </ul>
+
+  </aside>
+
+  <!-- Main Content -->
+
+  <main class="main-content">
+
+    <!-- Top Bar -->
+
+    <div class="topbar">
+
+      <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="text" placeholder="Search Vehicle...">
+
+      </div>
+
+      <div class="top-right">
+
+        <div class="notification">
+
+          <i class="fa-solid fa-bell"></i>
+
+          <span>4</span>
+
+        </div>
+
+        <div class="user">
+
+          <img src="https://i.pravatar.cc/100?img=12">
+
+          <div>
+
+            <h4>Hariom</h4>
+
+            <small>Customer</small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Welcome -->
+
+    <section class="welcome">
+
+      <div>
+
+        <h1>Welcome Back 👋</h1>
+
+        <p>
+
+          Manage bookings, payments and live tracking from one dashboard.
+
+        </p>
+
+      </div>
+
+      <button class="book-btn">
+
+        + Book Vehicle
+
+      </button>
+
+    </section>
+
+    <!-- Cards -->
+
+    <section class="cards">
+
+      <div class="card">
+
+        <div>
+
+          <h3>Total Bookings</h3>
+
+          <h1>126</h1>
+
+        </div>
+
+        <i class="fa-solid fa-truck"></i>
+
+      </div>
+
+      <div class="card">
+
+        <div>
+
+          <h3>Completed</h3>
+
+          <h1>98</h1>
+
+        </div>
+
+        <i class="fa-solid fa-circle-check"></i>
+
+      </div>
+
+      <div class="card">
+
+        <div>
+
+          <h3>Pending</h3>
+
+          <h1>18</h1>
+
+        </div>
+
+        <i class="fa-solid fa-hourglass-half"></i>
+
+      </div>
+
+      <div class="card">
+
+        <div>
+
+          <h3>Total Spent</h3>
+
+          <h1>₹1.25L</h1>
+
+        </div>
+
+        <i class="fa-solid fa-wallet"></i>
+
+      </div>
+
+    </section>
+    <!-- ================= Recent Bookings ================= -->
+
+    <section class="dashboard-grid">
+
+      <div class="recent-bookings">
+
+        <div class="section-header">
+
+          <h2>Recent Bookings</h2>
+
+          <a href="history.html">View All</a>
+
+        </div>
+
+        <table>
+
+          <thead>
+
+          <tr>
+
+            <th>Booking ID</th>
+
+            <th>Vehicle</th>
+
+            <th>Status</th>
+
+            <th>Amount</th>
+
+          </tr>
+
+          </thead>
+
+          <tbody>
+
+          <tr>
+
+            <td>#BK1001</td>
+
+            <td>Truck 14 Ton</td>
+
+            <td>
+
+                            <span class="status completed">
+
+                                Completed
+
+                            </span>
+
+            </td>
+
+            <td>₹12,500</td>
+
+          </tr>
+
+          <tr>
+
+            <td>#BK1002</td>
+
+            <td>Mini Truck</td>
+
+            <td>
+
+                            <span class="status running">
+
+                                Running
+
+                            </span>
+
+            </td>
+
+            <td>₹6,800</td>
+
+          </tr>
+
+          <tr>
+
+            <td>#BK1003</td>
+
+            <td>Pickup</td>
+
+            <td>
+
+                            <span class="status pending">
+
+                                Pending
+
+                            </span>
+
+            </td>
+
+            <td>₹4,300</td>
+
+          </tr>
+
+          <tr>
+
+            <td>#BK1004</td>
+
+            <td>Trailer</td>
+
+            <td>
+
+                            <span class="status cancelled">
+
+                                Cancelled
+
+                            </span>
+
+            </td>
+
+            <td>₹18,900</td>
+
+          </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <!-- ================= Quick Actions ================= -->
+
+      <div class="quick-actions">
+
+        <h2>Quick Actions</h2>
+
+        <div class="action-grid">
+
+          <a href="booking.html" class="action-card">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <span>Book Vehicle</span>
+
+          </a>
+
+          <a href="tracking.html" class="action-card">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <span>Track Cargo</span>
+
+          </a>
+
+          <a href="payment.html" class="action-card">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+            <span>Payment</span>
+
+          </a>
+
+          <a href="profile.html" class="action-card">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>Profile</span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= Vehicle Status ================= -->
+
+    <section class="vehicle-status">
+
+      <div class="section-header">
+
+        <h2>Available Vehicles</h2>
+
+      </div>
+
+      <div class="vehicle-grid">
+
+        <div class="vehicle-card">
+
+          <i class="fa-solid fa-truck-moving"></i>
+
+          <h3>Mini Truck</h3>
+
+          <p>Capacity : 2 Ton</p>
+
+          <button>Select</button>
+
+        </div>
+
+        <div class="vehicle-card">
+
+          <i class="fa-solid fa-truck"></i>
+
+          <h3>Truck</h3>
+
+          <p>Capacity : 10 Ton</p>
+
+          <button>Select</button>
+
+        </div>
+
+        <div class="vehicle-card">
+
+          <i class="fa-solid fa-trailer"></i>
+
+          <h3>Trailer</h3>
+
+          <p>Capacity : 20 Ton</p>
+
+          <button>Select</button>
+
+        </div>
+
+        <div class="vehicle-card">
+
+          <i class="fa-solid fa-box"></i>
+
+          <h3>Container</h3>
+
+          <p>Capacity : 30 Ton</p>
+
+          <button>Select</button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= Statistics ================= -->
+
+    <section class="statistics">
+
+      <div class="stat-box">
+
+        <h2>98%</h2>
+
+        <p>On Time Delivery</p>
+
+      </div>
+
+      <div class="stat-box">
+
+        <h2>500+</h2>
+
+        <p>Verified Drivers</p>
+
+      </div>
+
+      <div class="stat-box">
+
+        <h2>1200+</h2>
+
+        <p>Happy Customers</p>
+
+      </div>
+
+      <div class="stat-box">
+
+        <h2>24×7</h2>
+
+        <p>Customer Support</p>
+
+      </div>
+
+    </section>
+    <!-- ================= Notifications ================= -->
+
+    <section class="dashboard-bottom">
+
+      <div class="notifications">
+
+        <div class="section-header">
+
+          <h2>Latest Notifications</h2>
+
+        </div>
+
+        <div class="notification-item">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          <div>
+
+            <h4>Booking Completed</h4>
+
+            <p>Your booking #BK1001 has been completed successfully.</p>
+
+            <small>10 Minutes Ago</small>
+
+          </div>
+
+        </div>
+
+        <div class="notification-item">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          <div>
+
+            <h4>Vehicle Reached Destination</h4>
+
+            <p>Your shipment has reached the destination warehouse.</p>
+
+            <small>1 Hour Ago</small>
+
+          </div>
+
+        </div>
+
+        <div class="notification-item">
+
+          <i class="fa-solid fa-wallet"></i>
+
+          <div>
+
+            <h4>Payment Successful</h4>
+
+            <p>₹12,500 payment received successfully.</p>
+
+            <small>Yesterday</small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= Top Drivers ================= -->
+
+      <div class="top-drivers">
+
+        <div class="section-header">
+
+          <h2>Top Drivers</h2>
+
+        </div>
+
+        <div class="driver">
+
+          <img src="https://i.pravatar.cc/80?img=15">
+
+          <div>
+
+            <h4>Rahul Kumar</h4>
+
+            <small>★ 4.9 | 250 Trips</small>
+
+          </div>
+
+        </div>
+
+        <div class="driver">
+
+          <img src="https://i.pravatar.cc/80?img=18">
+
+          <div>
+
+            <h4>Amit Singh</h4>
+
+            <small>★ 4.8 | 210 Trips</small>
+
+          </div>
+
+        </div>
+
+        <div class="driver">
+
+          <img src="https://i.pravatar.cc/80?img=22">
+
+          <div>
+
+            <h4>Rakesh Yadav</h4>
+
+            <small>★ 4.9 | 340 Trips</small>
+
+          </div>
+
+        </div>
+
+        <div class="driver">
+
+          <img src="https://i.pravatar.cc/80?img=35">
+
+          <div>
+
+            <h4>Deepak Sharma</h4>
+
+            <small>★ 5.0 | 500 Trips</small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= Footer ================= -->
+
+    <footer class="dashboard-footer">
+
+      <p>
+
+        © 2026 Cargo Connect | Designed & Developed by Hariom Jaiswal
+
+      </p>
+
+    </footer>
+
+  </main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

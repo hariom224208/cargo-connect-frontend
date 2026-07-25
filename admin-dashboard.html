@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Dashboard | Cargo Connect</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet"
+        href="css/admin-dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+
+      <i class="fa-solid fa-truck-fast"></i>
+
+      <span>Cargo Connect</span>
+
+    </div>
+
+    <ul>
+
+      <li class="active">
+        <a href="#">
+          <i class="fa-solid fa-chart-line"></i>
+          Dashboard
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-users"></i>
+          Users
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-truck"></i>
+          Drivers
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-box"></i>
+          Bookings
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-money-check-dollar"></i>
+          Payments
+        </a>
+      </li>
+
+      <li>
+        <a href="login.html">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Logout
+        </a>
+      </li>
+
+    </ul>
+
+  </aside>
+
+  <!-- Main -->
+
+  <main class="main">
+
+    <div class="header">
+
+      <h1>Admin Dashboard</h1>
+
+      <p>Manage Cargo Connect Platform</p>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <section class="stats">
+
+      <div class="card">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h2 id="userCount">0</h2>
+
+        <p>Users</p>
+
+      </div>
+
+      <div class="card">
+
+        <i class="fa-solid fa-truck"></i>
+
+        <h2 id="driverCount">0</h2>
+
+        <p>Drivers</p>
+
+      </div>
+
+      <div class="card">
+
+        <i class="fa-solid fa-box"></i>
+
+        <h2 id="bookingCount">0</h2>
+
+        <p>Bookings</p>
+
+      </div>
+
+      <div class="card">
+
+        <i class="fa-solid fa-indian-rupee-sign"></i>
+
+        <h2 id="revenue">₹0</h2>
+
+        <p>Total Revenue</p>
+
+      </div>
+
+    </section>
+
+    <!-- Recent Bookings -->
+
+    <section class="table-card">
+
+      <h2>Recent Bookings</h2>
+
+      <table>
+
+        <thead>
+
+        <tr>
+
+          <th>ID</th>
+          <th>Customer</th>
+          <th>Driver</th>
+          <th>Vehicle</th>
+          <th>Status</th>
+          <th>Amount</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="bookingTable">
+
+        <!-- Loaded by JavaScript -->
+
+        </tbody>
+
+      </table>
+
+    </section>
+    <!-- ================= Quick Actions ================= -->
+
+    <section class="quick-actions">
+
+      <h2>Quick Actions</h2>
+
+      <div class="action-grid">
+
+        <button id="manageUsers">
+
+          <i class="fa-solid fa-users"></i>
+
+          Manage Users
+
+        </button>
+
+        <button id="manageDrivers">
+
+          <i class="fa-solid fa-truck"></i>
+
+          Manage Drivers
+
+        </button>
+
+        <button id="manageBookings">
+
+          <i class="fa-solid fa-box"></i>
+
+          Manage Bookings
+
+        </button>
+
+        <button id="managePayments">
+
+          <i class="fa-solid fa-money-check-dollar"></i>
+
+          Manage Payments
+
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ================= Footer ================= -->
+
+    <footer>
+
+      <p>
+
+        © 2026 Cargo Connect | Admin Dashboard
+
+      </p>
+
+    </footer>
+
+  </main>
+
+</div>
+
+<script src="js/admin-dashboard.js"></script>
+
+</body>
+
+</html>

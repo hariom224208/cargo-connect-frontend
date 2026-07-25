@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Driver Dashboard | Cargo Connect</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/driver-dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <span>Cargo Connect</span>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <a href="#">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="driver-bookings.html">
+                    <i class="fa-solid fa-box"></i>
+                    Assigned Bookings
+                </a>
+            </li>
+
+            <li>
+                <a href="tracking.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Live Tracking
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Driver Dashboard</h1>
+
+                <p>Welcome back, Rahul Kumar</p>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <section class="stats">
+
+            <div class="card">
+
+                <i class="fa-solid fa-box"></i>
+
+                <h2 id="assignedCount">0</h2>
+
+                <p>Assigned</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-truck"></i>
+
+                <h2 id="activeCount">0</h2>
+
+                <p>In Transit</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <h2 id="completedCount">0</h2>
+
+                <p>Completed</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                <h2 id="earning">₹0</h2>
+
+                <p>Total Earnings</p>
+
+            </div>
+
+        </section>
+
+        <!-- Assigned Bookings -->
+
+        <section class="booking-list">
+
+            <h2>Today's Assigned Bookings</h2>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Booking ID</th>
+                    <th>Pickup</th>
+                    <th>Destination</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Action</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="bookingTable">
+
+                <!-- Loaded using JavaScript -->
+
+                </tbody>
+
+            </table>
+
+        </section>
+        <!-- ================= Driver Status ================= -->
+
+        <section class="driver-status">
+
+            <div class="status-card">
+
+                <h2>Driver Status</h2>
+
+                <div class="status-row">
+
+                    <span>Current Status</span>
+
+                    <span id="driverStatus" class="online">
+
+                        Online
+
+                    </span>
+
+                </div>
+
+                <div class="status-row">
+
+                    <span>Current Vehicle</span>
+
+                    <span id="vehicleNumber">
+
+                        UP16AB1234
+
+                    </span>
+
+                </div>
+
+                <div class="status-row">
+
+                    <span>Current Location</span>
+
+                    <span id="driverLocation">
+
+                        Ghaziabad, Uttar Pradesh
+
+                    </span>
+
+                </div>
+
+                <div class="status-row">
+
+                    <span>Availability</span>
+
+                    <label class="switch">
+
+                        <input type="checkbox"
+                               id="availabilityToggle"
+                               checked>
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= Footer ================= -->
+
+        <footer>
+
+            <p>
+
+                © 2026 Cargo Connect | Driver Dashboard
+
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="js/driver-dashboard.js"></script>
+
+</body>
+
+</html>

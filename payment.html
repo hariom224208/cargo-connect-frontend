@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Payment | Cargo Connect</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet"
+        href="css/payment.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+
+      <i class="fa-solid fa-truck-fast"></i>
+
+      <span>Cargo Connect</span>
+
+    </div>
+
+    <ul>
+
+      <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+
+      <li><a href="booking.html"><i class="fa-solid fa-truck"></i> Book Vehicle</a></li>
+
+      <li class="active"><a href="#"><i class="fa-solid fa-credit-card"></i> Payment</a></li>
+
+      <li><a href="tracking.html"><i class="fa-solid fa-location-dot"></i> Tracking</a></li>
+
+      <li><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+
+      <li><a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+
+      <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+    </ul>
+
+  </aside>
+
+  <!-- Main -->
+
+  <main class="main">
+
+    <div class="page-header">
+
+      <h1>Secure Payment</h1>
+
+      <p>Complete your booking payment safely.</p>
+
+    </div>
+
+    <!-- Booking Summary -->
+
+    <section class="summary-card">
+
+      <h2>Booking Summary</h2>
+
+      <div class="summary-row">
+
+        <span>Booking ID</span>
+
+        <span id="bookingId">BK2026001</span>
+
+      </div>
+
+      <div class="summary-row">
+
+        <span>Vehicle</span>
+
+        <span id="vehicleName">Mini Truck</span>
+
+      </div>
+
+      <div class="summary-row">
+
+        <span>Pickup</span>
+
+        <span id="pickupLocation">Delhi</span>
+
+      </div>
+
+      <div class="summary-row">
+
+        <span>Drop</span>
+
+        <span id="dropLocation">Noida</span>
+
+      </div>
+
+      <div class="summary-row">
+
+        <span>Total Amount</span>
+
+        <span id="amount">₹4,870</span>
+
+      </div>
+
+    </section>
+
+    <!-- Payment Methods -->
+
+    <section class="payment-methods">
+
+      <h2>Select Payment Method</h2>
+
+      <div class="method-grid">
+
+        <label class="method">
+
+          <input type="radio" name="payment" value="UPI" checked>
+
+          <i class="fa-brands fa-google-pay"></i>
+
+          <span>UPI</span>
+
+        </label>
+
+        <label class="method">
+
+          <input type="radio" name="payment" value="CARD">
+
+          <i class="fa-solid fa-credit-card"></i>
+
+          <span>Credit / Debit Card</span>
+
+        </label>
+
+        <label class="method">
+
+          <input type="radio" name="payment" value="NET_BANKING">
+
+          <i class="fa-solid fa-building-columns"></i>
+
+          <span>Net Banking</span>
+
+        </label>
+
+        <label class="method">
+
+          <input type="radio" name="payment" value="COD">
+
+          <i class="fa-solid fa-money-bill-wave"></i>
+
+          <span>Cash</span>
+
+        </label>
+
+      </div>
+
+    </section>
+    <!-- ================= Card Details ================= -->
+
+    <section class="payment-form">
+
+      <h2>Payment Details</h2>
+
+      <div class="row">
+
+        <div class="input-box">
+
+          <label>Card Holder Name</label>
+
+          <input
+                  type="text"
+                  id="cardHolder"
+                  placeholder="Enter Card Holder Name">
+
+        </div>
+
+        <div class="input-box">
+
+          <label>Card Number</label>
+
+          <input
+                  type="text"
+                  id="cardNumber"
+                  maxlength="19"
+                  placeholder="1234 5678 9012 3456">
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="input-box">
+
+          <label>Expiry Date</label>
+
+          <input
+                  type="month"
+                  id="expiryDate">
+
+        </div>
+
+        <div class="input-box">
+
+          <label>CVV</label>
+
+          <input
+                  type="password"
+                  id="cvv"
+                  maxlength="3"
+                  placeholder="123">
+
+        </div>
+
+      </div>
+
+      <button id="payNow">
+
+        Pay Now
+
+      </button>
+
+    </section>
+
+    <!-- ================= Success Popup ================= -->
+
+    <div id="successModal" class="modal">
+
+      <div class="modal-content">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <h2>Payment Successful</h2>
+
+        <p>
+
+          Your booking has been confirmed successfully.
+
+        </p>
+
+        <button id="goTracking">
+
+          Track Shipment
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ================= Footer ================= -->
+
+    <footer>
+
+      <p>
+
+        © 2026 Cargo Connect | Secure Payment Gateway
+
+      </p>
+
+    </footer>
+
+  </main>
+
+</div>
+
+<script src="js/payment.js"></script>
+
+</body>
+
+</html>

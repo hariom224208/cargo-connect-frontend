@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Live Tracking | Cargo Connect</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <link rel="stylesheet"
+        href="css/tracking.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+
+      <i class="fa-solid fa-truck-fast"></i>
+
+      <span>Cargo Connect</span>
+
+    </div>
+
+    <ul>
+
+      <li>
+
+        <a href="dashboard.html">
+
+          <i class="fa-solid fa-house"></i>
+
+          Dashboard
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="booking.html">
+
+          <i class="fa-solid fa-truck"></i>
+
+          Book Vehicle
+
+        </a>
+
+      </li>
+
+      <li class="active">
+
+        <a href="#">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          Live Tracking
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="history.html">
+
+          <i class="fa-solid fa-clock-rotate-left"></i>
+
+          History
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="profile.html">
+
+          <i class="fa-solid fa-user"></i>
+
+          Profile
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="login.html">
+
+          <i class="fa-solid fa-right-from-bracket"></i>
+
+          Logout
+
+        </a>
+
+      </li>
+
+    </ul>
+
+  </aside>
+
+  <!-- Main -->
+
+  <main class="main">
+
+    <div class="header">
+
+      <div>
+
+        <h1>Live Shipment Tracking</h1>
+
+        <p>
+
+          Track your cargo in real time.
+
+        </p>
+
+      </div>
+
+      <button id="refreshBtn">
+
+        Refresh Location
+
+      </button>
+
+    </div>
+
+    <!-- Booking Details -->
+
+    <section class="tracking-info">
+
+      <div class="info-card">
+
+        <h3>Booking ID</h3>
+
+        <p id="bookingId">
+
+          BK2026001
+
+        </p>
+
+      </div>
+
+      <div class="info-card">
+
+        <h3>Status</h3>
+
+        <p id="status">
+
+          In Transit
+
+        </p>
+
+      </div>
+
+      <div class="info-card">
+
+        <h3>ETA</h3>
+
+        <p id="eta">
+
+          02 Hours 15 Minutes
+
+        </p>
+
+      </div>
+
+      <div class="info-card">
+
+        <h3>Distance Left</h3>
+
+        <p id="distance">
+
+          82 KM
+
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- Map -->
+
+    <section class="map-section">
+
+      <div id="map"></div>
+
+    </section>
+
+    <!-- Driver -->
+
+    <section class="driver-section">
+
+      <div class="driver-card">
+
+        <img src="https://i.pravatar.cc/120?img=15">
+
+        <div>
+
+          <h2>Rahul Kumar</h2>
+
+          <p>
+
+            Driver
+
+          </p>
+
+          <p>
+
+            ★ 4.9 Rating
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="vehicle-card">
+
+        <h2>Vehicle</h2>
+
+        <p>
+
+          14 Ton Truck
+
+        </p>
+
+        <h3>
+
+          UP16AB1234
+
+        </h3>
+
+      </div>
+
+    </section>
+    <!-- ================= Delivery Progress ================= -->
+
+    <section class="progress-section">
+
+      <div class="progress-card">
+
+        <h2>Delivery Progress</h2>
+
+        <div class="progress-bar">
+
+          <div class="progress-fill" id="progressFill"></div>
+
+        </div>
+
+        <p id="progressText">
+
+          70% Completed
+
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ================= Timeline ================= -->
+
+    <section class="timeline-section">
+
+      <h2>Shipment Timeline</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item completed">
+
+          <div class="circle"></div>
+
+          <div class="content">
+
+            <h3>Booking Confirmed</h3>
+
+            <p>Booking has been successfully confirmed.</p>
+
+            <small>09:15 AM</small>
+
+          </div>
+
+        </div>
+
+        <div class="timeline-item completed">
+
+          <div class="circle"></div>
+
+          <div class="content">
+
+            <h3>Vehicle Assigned</h3>
+
+            <p>Driver Rahul Kumar accepted your booking.</p>
+
+            <small>09:40 AM</small>
+
+          </div>
+
+        </div>
+
+        <div class="timeline-item active">
+
+          <div class="circle"></div>
+
+          <div class="content">
+
+            <h3>In Transit</h3>
+
+            <p>Your shipment is currently on the way.</p>
+
+            <small>Live</small>
+
+          </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <div class="circle"></div>
+
+          <div class="content">
+
+            <h3>Reached Destination</h3>
+
+            <p>Estimated arrival at destination.</p>
+
+            <small>Pending</small>
+
+          </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <div class="circle"></div>
+
+          <div class="content">
+
+            <h3>Delivered</h3>
+
+            <p>Shipment delivered successfully.</p>
+
+            <small>Pending</small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= Contact Driver ================= -->
+
+    <section class="contact-section">
+
+      <button id="callDriver">
+
+        <i class="fa-solid fa-phone"></i>
+
+        Call Driver
+
+      </button>
+
+      <button id="messageDriver">
+
+        <i class="fa-solid fa-message"></i>
+
+        Message Driver
+
+      </button>
+
+      <button id="shareTracking">
+
+        <i class="fa-solid fa-share-nodes"></i>
+
+        Share Tracking
+
+      </button>
+
+    </section>
+
+    <!-- ================= Footer ================= -->
+
+    <footer>
+
+      <p>
+
+        © 2026 Cargo Connect | Live Tracking System
+
+      </p>
+
+    </footer>
+
+  </main>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="js/tracking.js"></script>
+
+</body>
+
+</html>

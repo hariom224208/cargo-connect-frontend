@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Register | Cargo Connect</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="css/auth.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="left">
+
+    <h1>Join Cargo Connect</h1>
+
+    <p>
+
+      Create your account and start transporting
+      goods smarter.
+
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80">
+
+  </div>
+
+  <div class="right">
+
+    <form id="registerForm">
+
+      <h2>Create Account</h2>
+
+      <div class="input-box">
+
+        <i class="fa fa-user"></i>
+
+        <input
+                type="text"
+                id="name"
+                placeholder="Full Name"
+                required>
+
+      </div>
+
+      <div class="input-box">
+
+        <i class="fa fa-envelope"></i>
+
+        <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                required>
+
+      </div>
+
+      <div class="input-box">
+
+        <i class="fa fa-phone"></i>
+
+        <input
+                type="text"
+                id="phone"
+                placeholder="Phone Number"
+                required>
+
+      </div>
+
+      <div class="input-box">
+
+        <i class="fa fa-lock"></i>
+
+        <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required>
+
+      </div>
+
+      <div class="input-box">
+
+        <i class="fa fa-users"></i>
+
+        <select id="role" required>
+          <option value="USER">Customer</option>
+          <option value="DRIVER">Driver</option>
+        </select>
+
+      </div>
+
+      <button>
+
+        Register
+
+      </button>
+
+      <p>
+
+        Already have account?
+
+        <a href="login.html">
+
+          Login
+
+        </a>
+
+      </p>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script src="js/register.js"></script>
+
+</body>
+
+</html>

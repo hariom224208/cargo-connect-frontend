@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Cargo Connect</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/profile.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <span>Cargo Connect</span>
+
+        </div>
+
+        <ul>
+
+            <li>
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="booking.html">
+
+                    <i class="fa-solid fa-truck"></i>
+
+                    Book Vehicle
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="tracking.html">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Tracking
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="history.html">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    Booking History
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="login.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <div class="page-header">
+
+            <h1>My Profile</h1>
+
+            <button id="editBtn">
+
+                Edit Profile
+
+            </button>
+
+        </div>
+
+        <!-- Profile Card -->
+
+        <section class="profile-card">
+
+            <div class="profile-left">
+
+                <img id="profileImage"
+                     src="https://i.pravatar.cc/180?img=12"
+                     alt="Profile">
+
+                <button id="changePhoto">
+
+                    Change Photo
+
+                </button>
+
+            </div>
+
+            <div class="profile-right">
+
+                <h2 id="userName">
+
+                    Hariom Jaiswal
+
+                </h2>
+
+                <p>
+
+                    Customer
+
+                </p>
+
+                <div class="stats">
+
+                    <div>
+
+                        <h3>126</h3>
+
+                        <span>Bookings</span>
+
+                    </div>
+
+                    <div>
+
+                        <h3>98</h3>
+
+                        <span>Completed</span>
+
+                    </div>
+
+                    <div>
+
+                        <h3>₹1.25L</h3>
+
+                        <span>Total Spent</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Personal Information -->
+
+        <section class="profile-form">
+
+            <h2>Personal Information</h2>
+
+            <div class="row">
+
+                <div class="input-box">
+
+                    <label>Full Name</label>
+
+                    <input
+                            type="text"
+                            id="name"
+                            value="Hariom Jaiswal">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Email</label>
+
+                    <input
+                            type="email"
+                            id="email"
+                            value="hariom@gmail.com">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="input-box">
+
+                    <label>Phone</label>
+
+                    <input
+                            type="text"
+                            id="phone"
+                            value="9876543210">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>City</label>
+
+                    <input
+                            type="text"
+                            id="city"
+                            value="Ghaziabad">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="input-box">
+
+                    <label>Address</label>
+
+                    <textarea
+                            id="address"
+                            rows="4">
+
+House No...
+Ghaziabad
+Uttar Pradesh
+
+                    </textarea>
+
+                </div>
+
+            </div>
+
+            <button id="saveProfile">
+
+                Save Changes
+
+            </button>
+
+        </section>
+        <!-- ================= Change Password ================= -->
+
+        <section class="password-section">
+
+            <h2>Change Password</h2>
+
+            <div class="row">
+
+                <div class="input-box">
+
+                    <label>Current Password</label>
+
+                    <input
+                            type="password"
+                            id="currentPassword"
+                            placeholder="Enter current password">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>New Password</label>
+
+                    <input
+                            type="password"
+                            id="newPassword"
+                            placeholder="Enter new password">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="input-box">
+
+                    <label>Confirm Password</label>
+
+                    <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm new password">
+
+                </div>
+
+            </div>
+
+            <button id="changePasswordBtn">
+
+                Update Password
+
+            </button>
+
+        </section>
+
+        <!-- ================= Recent Activity ================= -->
+
+        <section class="activity-section">
+
+            <h2>Recent Activity</h2>
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                    <div>
+
+                        <h4>Vehicle Booked</h4>
+
+                        <p>Mini Truck booked from Delhi to Noida.</p>
+
+                        <small>Today • 10:45 AM</small>
+
+                    </div>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <div>
+
+                        <h4>Payment Completed</h4>
+
+                        <p>₹4,870 paid successfully.</p>
+
+                        <small>Yesterday • 6:20 PM</small>
+
+                    </div>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+
+                        <h4>Shipment Delivered</h4>
+
+                        <p>Your shipment reached the destination.</p>
+
+                        <small>2 Days Ago</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= Footer ================= -->
+
+        <footer>
+
+            <p>
+
+                © 2026 Cargo Connect | User Profile
+
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="js/profile.js"></script>
+
+</body>
+
+</html>
