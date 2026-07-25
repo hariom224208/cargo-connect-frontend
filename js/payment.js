@@ -13,17 +13,13 @@ Load Booking Details
 ==================================*/
 
 async function loadBooking() {
-
     if (!bookingId) return;
 
     try {
-
         const response = await fetch(`${BOOKING_API}/${bookingId}`, {
-
             headers: {
                 "Authorization": "Bearer " + token
             }
-
         });
 
         if (!response.ok) return;
@@ -34,14 +30,11 @@ async function loadBooking() {
         document.getElementById("vehicleName").innerText = booking.vehicleType;
         document.getElementById("pickupLocation").innerText = booking.pickupLocation;
         document.getElementById("dropLocation").innerText = booking.dropLocation;
-        document.getElementById("amount").innerText = "₹" + booking.totalAmount;
+        document.getElementById("amount").innerText = "₹" + booking.price;
 
     } catch (error) {
-
         console.log(error);
-
     }
-
 }
 
 /*==================================
@@ -51,15 +44,10 @@ Card Number Formatting
 const cardNumber = document.getElementById("cardNumber");
 
 cardNumber.addEventListener("input", function () {
-
     let value = this.value.replace(/\D/g, "");
-
-    value = value.substring(0,16);
-
-    value = value.replace(/(.{4})/g,"$1 ").trim();
-
+    value = value.substring(0, 16);
+    value = value.replace(/(.{4})/g, "$1 ").trim();
     this.value = value;
-
 });
 
 /*==================================
@@ -67,84 +55,56 @@ Payment
 ==================================*/
 
 document.getElementById("payNow").addEventListener("click", async () => {
-
     const paymentMethod = document.querySelector(
         'input[name="payment"]:checked'
     ).value;
 
     const holder = document.getElementById("cardHolder").value.trim();
-
-    const number = document.getElementById("cardNumber")
-        .value.replace(/\s/g,"");
-
+    const number = document.getElementById("cardNumber").value.replace(/\s/g, "");
     const expiry = document.getElementById("expiryDate").value;
-
     const cvv = document.getElementById("cvv").value;
 
     if (paymentMethod === "CARD") {
-
         if (
             holder === "" ||
             number.length !== 16 ||
             expiry === "" ||
             cvv.length !== 3
         ) {
-
             alert("Enter valid card details.");
-
             return;
-
         }
-
     }
 
     try {
+        const amountText = document.getElementById("amount").innerText;
+        const amount = parseFloat(amountText.replace("₹", ""));
 
         const response = await fetch(API_URL, {
-
-            method:"POST",
-
-            headers:{
-                "Content-Type":"application/json",
-                "Authorization":"Bearer "+token
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
             },
-
-            body:JSON.stringify({
-
-                bookingId: bookingId,
-
+            body: JSON.stringify({
+                bookingId: parseInt(bookingId),
                 paymentMethod: paymentMethod,
-
-                amount: document
-                    .getElementById("amount")
-                    .innerText
-                    .replace("₹","")
-
+                amount: amount
             })
-
         });
 
-        if(response.ok){
-
+        if (response.ok) {
             document
                 .getElementById("successModal")
                 .classList
                 .add("show");
-
-        }else{
-
+        } else {
             alert("Payment Failed");
-
         }
-
-    }catch(error){
-
+    } catch (error) {
         console.log(error);
-
         alert("Server Error");
-
     }
-
 });
 
 /*==================================
@@ -152,28 +112,20 @@ Go Tracking
 ==================================*/
 
 document.getElementById("goTracking")
-.addEventListener("click",()=>{
-
-    window.location.href="tracking.html";
-
-});
+    .addEventListener("click", () => {
+        window.location.href = "tracking.html";
+    });
 
 /*==================================
 Logout
 ==================================*/
 
-const logout=document.querySelector(
-'a[href="login.html"]'
-);
+const logout = document.querySelector('a[href="login.html"]');
 
-if(logout){
-
-    logout.addEventListener("click",()=>{
-
+if (logout) {
+    logout.addEventListener("click", () => {
         localStorage.clear();
-
     });
-
 }
 
 /*==================================
